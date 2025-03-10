@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friday Night Funkin': Indie Cross</title>
+    <link rel="stylesheet" href="path/to/your/styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>Friday Night Funkin': Indie Cross</h1>
+        <canvas id="game-canvas" width="1280" height="720"></canvas>
+    </div>
+    <script src="path/to/your/pixi.js"></script>
+    <script src="path/to/your/haxe-library.js"></script>
+    <script src="path/to/your/game.js"></script>
+    <script>
+        // Initialize your game here
+        const app = new PIXI.Application({
+            view: document.getElementById('game-canvas'),
+            width: 1280,
+            height: 720,
+        });
+
+        // Example of loading assets and starting the game
+        PIXI.Loader.shared
+            .add('assets/spritesheet.json')
+            .load(setup);
+
+        function setup() {
+            const sprite = new PIXI.Sprite(PIXI.Loader.shared.resources["assets/spritesheet.json"].textures["example.png"]);
+            app.stage.addChild(sprite);
+        }
+    </script>
+</body>
+</html>
